@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поликлиника</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">Назад</button>
+    
+    <div class="login-container" id="loginForm">
+        <h2>Вход</h2>
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Логин" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <button type="submit">Войти</button>
+        </form>
+        <a href="/register">Регистрация</a>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <h2>Услуги</h2>
+        <ul>
+            <li><a href="#">Запись на прием</a></li>
+            <li><a href="#">Расписание</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </div>
+
+    <div class="menu-icon" id="menuIcon">☰</div>
+
+    <main id="mainContent">
+        <h1>Добро пожаловать в нашу поликлинику!</h1>
+        <p>Здесь вы можете записаться на прием к врачу и узнать расписание.</p>
+    </main>
+
+    <footer>
+        <p>&copy; Поликлиника</p>
+    </footer>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const menuIcon = document.getElementById('menuIcon');
+
+        sidebar.style.display = 'none'; 
+
+        menuIcon.addEventListener('mouseenter', () => {
+            sidebar.style.display = 'block';
+        });
+
+        sidebar.addEventListener('mouseleave', () => {
+            sidebar.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

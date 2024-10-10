@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список специальностей врачей</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            margin: 50px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px; 
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center; 
+        }
+
+        .button-grid {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        .button-grid a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 15px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            flex: 1 1 150px; 
+            text-align: center; 
+        }
+
+        .button-grid a:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            margin: 20px; 
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">Назад</button>
+    
+    <div class="container">
+        <h2>Специализации врачей</h2>
+        <div class="button-grid">
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Терапевт') }}">Терапевт</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Хирург') }}">Хирург</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Стоматолог') }}">Стоматолог</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Педиатр') }}">Педиатр</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Ортопед') }}">Ортопед</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Кардиолог') }}">Кардиолог</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Невролог') }}">Невролог</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Эндокринолог') }}">Эндокринолог</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Дерматолог') }}">Дерматолог</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Венеролог') }}">Венеролог</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Гематолог') }}">Гематолог</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Проктолог') }}">Проктолог</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Психиатр') }}">Психиатр</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Уролог') }}">Уролог</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Гинеколог') }}">Гинеколог</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Химиотерапевт') }}">Химиотерапевт</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Реабилитолог') }}">Реабилитолог</a>
+            <a href="{{ url_for('doctors_list_by_specialty', specialty='Физиотерапевт') }}">Физиотерапевт</a>
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

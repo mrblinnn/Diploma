@@ -1,0 +1,25 @@
+<link href='fullcalendar.css' rel='stylesheet' />
+<script src='fullcalendar.js'></script>
+
+<script>
+    $(document).ready(function() {
+        $('#calendar').fullCalendar({
+            events: function(start, end, timezone, callback) {
+                var events = [];
+
+                callback(events);
+            },
+            dayRender: function(date, cell) {
+                // Здесь можно выделить дни (красный для занятых, зеленый для свободных)
+            },
+            selectable: true,
+            select: function(start, end) {
+               
+                var doctor = document.getElementById('modal-title').innerText.split(' ')[2];
+                appointments[doctor].push(start.format());
+                alert('Запись на ' + start.format() + ' успешно создана!');
+                closeCalendar();
+            }
+        });
+    });
+</script>
